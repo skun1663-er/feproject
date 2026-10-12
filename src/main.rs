@@ -1,58 +1,33 @@
 
+use rand::Rng;
 use std::io;
 
 fn main() {
-    println!("=== Rust Calculator ===");
+    let secret = rand::rng().random_range(1..=100);
 
-    let first = read_number("Enter the first number: ");
-    let operator = read_operator();
-    let second = read_number("Enter the second number: ");
+    println!("Guess the number between 1 and 100!");
 
-    let result = match operator.as_str() {
-        "+" => Some(first + second),
-        "-" => Some(first - second),
-        "*" => Some(first * second),
-        "/" if second != 0.0 => Some(first / second),
-        "/" => {
-            println!("Error: Cannot divide by zero!");
-            None
-        }
-        _ => {
-            println!("Error: Unknown operator!");
-            None
-        }
-    };
-
-    if let Some(value) = result {
-        println!("Result: {}", value);
-    }
-}
-
-fn read_number(prompt: &str) -> f64 {
     loop {
-        println!("{}", prompt);
+        println!("Enter your guess:");
 
         let mut input = String::new();
+        io::stdin().read_line(&mut input).expect("Input failed");
 
-        io::stdin()
-            .read_line(&mut input)
-            .expect("Failed to read input");
+        let guess: u32 = match input.trim().parse() {
+            Ok(number) => number,
+            Err(_) => {
+                println!("Please enter a valid number.");
+                continue;
+            }
+        };
 
-        match input.trim().parse::<f64>() {
-            Ok(number) => return number,
-            Err(_) => println!("Please enter a valid number."),
+        if guess < secret {
+            println!("Too low!");
+        } else if guess > secret {
+            println!("Too high!");
+        } else {
+            println!("Correct! You win!");
+            break;
         }
     }
-}
-
-fn read_operator() -> String {
-    println!("Enter operator (+, -, *, /): ");
-
-    let mut operator = String::new();
-
-    io::stdin()
-        .read_line(&mut operator)
-        .expect("Failed to read input");
-
-    operator.trim().to_string()
 }
