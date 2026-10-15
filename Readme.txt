@@ -165,5 +165,17 @@ Understand the result:
 - to_lowercase() — makes matching case-insensitive.
 Limitation: This checks the downloaded HTML, not text rendered later by JavaScript.
 
-17)
+17) Broken Link Checker:-
+What: Build a Rust tool that extracts links from a webpage and checks whether they respond successfully.
+Why: Learn HTML link extraction, URL handling, HTTP status checking, and automated website testing.
+Add the scraper library. It lets Rust extract links from HTML without manually parsing tags: cargo add scraper
+What: Extract links from a page and test each link.
+Why: The program resolves relative links, requests each URL, and reports HTTP errors.
+The tool scans the example webpage and tests its discovered links.
+Understand the output:
+- [OK] — the link returned a successful HTTP status.
+- [HTTP ERROR] — the server responded with a non-success status, such as 404.
+- [REQUEST FAILED] — the request failed due to a timeout, connection problem, or another request error.
+Important: A link returning an error isn't always broken; some websites block automated requests or require authentication. This beginner version checks links sequentially and doesn't crawl beyond the initial page.
 
+18)
