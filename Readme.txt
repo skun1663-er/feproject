@@ -187,4 +187,12 @@ Understand the output:
 - Headers present: 4/6 — four of the six checked headers exist.
 Important: A missing header is not automatically a vulnerability; the right protections depend on the website. This tool checks header presence, not whether every header value is configured securely.
 
-19)
+19) TCP Port Checker:-
+What: Build a Rust tool that checks whether specific TCP ports accept connections on your own computer.
+Why: Learn TCP networking, socket connections, timeouts, and basic troubleshooting used in network automation.
+Understand the output:
+- [OPEN] — a service accepted the TCP connection.
+- [CLOSED or FILTERED] — the connection failed or timed out; this doesn't distinguish a closed port from a firewall filter.
+- 127.0.0.1 — your own computer, so you can test safely without scanning other machines.
+Practice: Start a local development server on port 3000, run the checker again, and observe the result.
+
