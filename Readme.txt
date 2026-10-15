@@ -270,3 +270,18 @@ Understand the important parts:
 - pid — identifies a particular running process.
 Note: CPU usage may initially show zero because this version takes a single snapshot. Some processes may also be hidden or have incomplete information due to Windows permissions.
 
+26) Process Resource Alert Tool:-
+Build a Rust tool that monitors running processes and warns when any process exceeds your CPU or memory thresholds.
+Learn process-level monitoring, threshold checks, and automated resource alerts.
+It repeatedly checks running processes and reports those exceeding either threshold.
+Test the alerts:
+What: Temporarily lower memory_limit_mb from 500.0 to 50.0.
+Where: Near the beginning of process_resource_alert.rs.
+Why: A lower threshold makes it easier to see alerts on ordinary processes; restore the threshold afterward.
+- [ALERT] — a process exceeded at least one threshold.
+- PID — identifies the process.
+- CPU — reported CPU usage percentage.
+- Memory — memory attributed to that process in MB.
+Note: This version may print repeated alerts for the same process on every check, and CPU usage can exceed 100% on multicore systems.
+
+27)
