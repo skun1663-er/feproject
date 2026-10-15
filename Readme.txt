@@ -254,4 +254,19 @@ Live Process Monitor:
 Launch → Collect → Display → Wait → Repeat
 Like watching a live video of your running processes.
 
-25)
+25) Process Search Tool:-
+Build a Rust tool that searches running processes by name and displays their process ID, CPU usage, and memory consumption.
+Learn string matching, process identification, and targeted system diagnostics.
+The program searches the current process list for names matching your input.
+Test it:
+Try entering--
+- chrome — searches for Chrome processes.
+- code — searches for VS Code processes.
+- rust — searches for processes whose names contain rust.
+Understand the important parts:
+- read_line() — receives your search term.
+- to_lowercase() — makes matching case-insensitive.
+- contains() — matches partial process names.
+- pid — identifies a particular running process.
+Note: CPU usage may initially show zero because this version takes a single snapshot. Some processes may also be hidden or have incomplete information due to Windows permissions.
+
