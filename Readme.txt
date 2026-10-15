@@ -225,4 +225,15 @@ What: Temporarily change let cpu_limit = 80.0; to let cpu_limit = 1.0;.
 Where: At the top of system_alert_monitor.rs.
 Why: A low threshold makes it easier to verify that the alert logic works; restore it to 80.0 afterward.
 
-23)
+23) Running Process Viewer:-
+Build a Rust tool that lists running processes, their CPU usage, and memory consumption.
+Learn process enumeration and resource inspection—useful for system diagnostics and automation testing.
+It collects process information and sorts processes by memory usage.
+Understand the output:
+- PROCESS: The running process's name.
+- CPU (%): The process's reported CPU usage; values can vary and may exceed 100% for multi-core usage.
+- MEMORY (MB): Memory currently attributed to the process, converted from bytes.
+- Top 20: Only the 20 processes using the most memory are displayed.
+Note: Some Windows processes may have restricted or incomplete information, depending on permissions.
+
+24)
