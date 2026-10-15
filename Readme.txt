@@ -178,4 +178,13 @@ Understand the output:
 - [REQUEST FAILED] — the request failed due to a timeout, connection problem, or another request error.
 Important: A link returning an error isn't always broken; some websites block automated requests or require authentication. This beginner version checks links sequentially and doesn't crawl beyond the initial page.
 
-18)
+18) Website Security Header Checker:-
+What: Build a Rust tool that checks a website's HTTP response headers for common security protections.
+Why: Learn HTTP headers and basic web security auditing.
+Understand the output:
+- [PRESENT] — the header exists in the server's response.
+- [MISSING] — the header was not found.
+- Headers present: 4/6 — four of the six checked headers exist.
+Important: A missing header is not automatically a vulnerability; the right protections depend on the website. This tool checks header presence, not whether every header value is configured securely.
+
+19)
