@@ -318,4 +318,17 @@ Understand the health status:
 - Running Processes — the number of processes visible to sysinfo.
 Note: This is a basic threshold-based assessment, not a complete diagnosis of system health; it does not yet inspect disk space, temperature, or application errors.
 
-
+30) System Health History Tracker:-
+Build a Rust tool that records CPU, memory, and process statistics in a CSV file every time you run it.
+Learn historical data collection, CSV logging, and tracking system performance over time.
+Collect and save one system health snapshot.
+Collect several snapshots:
+What: Run the program multiple times.
+Where: PowerShell, using the same command.
+Why: Multiple records let you compare CPU, memory, and process counts over time.
+Each run appends a new row instead of overwriting previous measurements.
+View the history:
+What: Display the recorded measurements.
+Where: PowerShell, from your project directory.
+Why: This verifies that the CSV file contains historical snapshots.
+Important: The timestamp is Unix time in seconds, and the CSV is stored relative to your current working directory.
