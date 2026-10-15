@@ -1,0 +1,7 @@
+Timestamp,URL,HTTP Status,Response Time (ms),Result
+1792050691,"https://example.com","200 OK",467.43,"SUCCESS"
+1792050691,"https://www.rust-lang.org","200 OK",293.16,"SUCCESS"
+1792050691,"https://www.wikipedia.org","200 OK",544.08,"SUCCESS"
+1792050888,"https://example.com","200 OK",403.05,"SUCCESS"
+1792050888,"https://www.rust-lang.org","200 OK",374.10,"SUCCESS"
+1792050888,"https://www.wikipedia.org","200 OK",470.37,"SUCCESS"

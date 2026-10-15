@@ -1,0 +1,4 @@
+URL,HTTP Status,Response Time (ms),Result
+"https://example.com","200 OK",412.28,"SUCCESS"
+"https://www.rust-lang.org","200 OK",614.36,"SUCCESS"
+"https://www.wikipedia.org","200 OK",581.84,"SUCCESS"
