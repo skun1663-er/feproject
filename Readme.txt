@@ -196,3 +196,8 @@ Understand the output:
 - 127.0.0.1 — your own computer, so you can test safely without scanning other machines.
 Practice: Start a local development server on port 3000, run the checker again, and observe the result.
 
+20) System Resource Monitor:-
+What: Build a Rust tool that displays your computer's CPU and memory usage.
+Why: Learn system monitoring, external libraries, and resource measurements used in performance testing and automation.
+Since you're using Windows, we'll use the cross-platform Rust library sysinfo. Add sysinfo to your project dependencies. This library reads CPU and memory information from Windows and other supported operating systems.
+

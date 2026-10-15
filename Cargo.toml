@@ -7,3 +7,4 @@ edition = "2024"
 rand = "0.9"
 reqwest = { version = "0.13.5", features = ["blocking"] }
 scraper = "0.27.0"
+sysinfo = "0.39.6"
