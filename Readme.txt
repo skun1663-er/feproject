@@ -200,4 +200,29 @@ Practice: Start a local development server on port 3000, run the checker again, 
 What: Build a Rust tool that displays your computer's CPU and memory usage.
 Why: Learn system monitoring, external libraries, and resource measurements used in performance testing and automation.
 Since you're using Windows, we'll use the cross-platform Rust library sysinfo. Add sysinfo to your project dependencies. This library reads CPU and memory information from Windows and other supported operating systems.
+What: The code retrieves CPU and RAM statistics.
+Where: The main() function in system_monitor.rs.
+Why: refresh_all() updates the measurements, and dividing bytes by \(1{,}073{,}741{,}824\) converts them to GiB. CPU readings rely on refreshed measurements.
 
+21) Live System Monitor:-
+What: Build a Rust program that continuously displays CPU and RAM usage.
+Why: Learn repeated sampling, loops, screen refreshing, and real-time performance monitoring.
+The loop refreshes the measurements every second and redraws the display.
+Understand the important parts:
+- loop — repeats the monitoring process indefinitely.
+- refresh_cpu_usage() — requests an updated CPU measurement.
+- refresh_memory() — refreshes RAM statistics.
+- thread::sleep() — waits one second between readings.
+- Ctrl+C — stops the program.
+Expected result: CPU and memory readings update approximately once per second.
+
+22) System Alert Monitor:-
+Build a Rust tool that warns you when CPU or RAM usage exceeds a specified threshold.
+Why: Learn threshold-based alerts, conditional logic, and monitoring patterns used in automated testing and production systems.
+It checks resource usage every second and prints an alert when either threshold is reached.
+Test the alerts:
+What: Temporarily change let cpu_limit = 80.0; to let cpu_limit = 1.0;.
+Where: At the top of system_alert_monitor.rs.
+Why: A low threshold makes it easier to verify that the alert logic works; restore it to 80.0 afterward.
+
+23)
