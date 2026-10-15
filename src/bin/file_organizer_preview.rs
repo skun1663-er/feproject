@@ -73,14 +73,15 @@ fn organize_folder(folder: &Path, dry_run: bool) -> io::Result<usize> {
         };
 
         // Choose a category based on the file extension.
-        let category = match extension.as_str() {
-            "png" | "jpg" | "jpeg" | "gif" | "webp" => "Images",
-            "pdf" | "doc" | "docx" | "txt" => "Documents",
-            "mp3" | "wav" | "flac" => "Audio",
-            "mp4" | "mkv" | "mov" => "Videos",
-            "zip" | "rar" | "7z" => "Archives",
-            _ => "Others",
-        };
+        // let category = match extension.as_str() {
+        //     "png" | "jpg" | "jpeg" | "gif" | "webp" => "Images",
+        //     "pdf" | "doc" | "docx" | "txt" => "Documents",
+        //     "mp3" | "wav" | "flac" => "Audio",
+        //     "mp4" | "mkv" | "mov" => "Videos",
+        //     "zip" | "rar" | "7z" => "Archives",
+        //     _ => "Others",
+        // };
+        let category = category_for_extension(&extension);
 
         let destination_dir = folder.join(category);
 
@@ -137,4 +138,51 @@ fn organize_folder(folder: &Path, dry_run: bool) -> io::Result<usize> {
     }
 
     Ok(moved)
+}
+
+
+fn category_for_extension(extension: &str) -> &'static str {
+    match extension.to_ascii_lowercase().as_str() {
+        "png" | "jpg" | "jpeg" | "gif" | "webp" => "Images",
+        "pdf" | "doc" | "docx" | "txt" => "Documents",
+        "mp3" | "wav" | "flac" => "Audio",
+        "mp4" | "mkv" | "mov" => "Videos",
+        "zip" | "rar" | "7z" => "Archives",
+        _ => "Others",
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::category_for_extension;
+
+    #[test]
+    fn recognizes_images() {
+        assert_eq!(category_for_extension("png"), "Images");
+        assert_eq!(category_for_extension("jpg"), "Images");
+    }
+
+    #[test]
+    fn recognizes_documents() {
+        assert_eq!(category_for_extension("pdf"), "Documents");
+        assert_eq!(category_for_extension("txt"), "Documents");
+    }
+
+    #[test]
+    fn recognizes_audio_and_video() {
+        assert_eq!(category_for_extension("mp3"), "Audio");
+        assert_eq!(category_for_extension("mp4"), "Videos");
+    }
+
+    #[test]
+    fn recognizes_archives_and_unknown_extensions() {
+        assert_eq!(category_for_extension("zip"), "Archives");
+        assert_eq!(category_for_extension("csv"), "Others");
+    }
+
+    #[test]
+    fn handles_uppercase_extensions() {
+        assert_eq!(category_for_extension("PDF"), "Documents");
+        assert_eq!(category_for_extension("JPG"), "Images");
+    }
 }
