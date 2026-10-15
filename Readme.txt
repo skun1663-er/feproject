@@ -284,4 +284,16 @@ Why: A lower threshold makes it easier to see alerts on ordinary processes; rest
 - Memory — memory attributed to that process in MB.
 Note: This version may print repeated alerts for the same process on every check, and CPU usage can exceed 100% on multicore systems.
 
-27)
+27) Process Alert Logger:-
+Build a Rust tool that monitors running processes and saves CPU and memory alerts to a CSV file.
+It checks processes every two seconds and appends matching alerts to a CSV file.
+Learn file appending, CSV logging, timestamps, and persistent monitoring records.
+Verify the log:
+What: Open the generated CSV file.
+Where: In another PowerShell window, from the same project directory.
+Why: This confirms that alerts persist after each monitoring cycle.
+The file contains a Unix timestamp, process ID, process name, CPU usage, memory usage, and alert reason.
+Testing tip: Temporarily lower memory_limit_mb to 50.0 to make alerts easier to trigger.
+Note: This logs every matching process on every cycle, so the CSV can grow quickly. Press Ctrl+C to stop the monitor.
+
+28)
