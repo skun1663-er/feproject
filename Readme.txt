@@ -236,4 +236,22 @@ Understand the output:
 - Top 20: Only the 20 processes using the most memory are displayed.
 Note: Some Windows processes may have restricted or incomplete information, depending on permissions.
 
-24)
+24) Live Process Monitor:-
+Build a Rust tool that continuously monitors running processes and their CPU and memory usage.
+Learn repeated process sampling, sorting, and real-time system diagnostics.
+It refreshes process information and displays the 15 processes currently using the most memory.
+Understand the key parts:
+- refresh_all() — refreshes system and process information.
+- sort_by() — orders processes by memory consumption.
+- take(15) — limits the display to 15 processes.
+- thread::sleep() — waits two seconds before refreshing again.
+- Ctrl+C — stops the program.
+Note: The first CPU readings may be zero or inaccurate because CPU usage needs time between measurements to become meaningful.
+Running Process Viewer:
+Launch → Collect data → Display results → Stop
+Like taking a photograph of your running processes.
+Live Process Monitor:
+Launch → Collect → Display → Wait → Repeat
+Like watching a live video of your running processes.
+
+25)
