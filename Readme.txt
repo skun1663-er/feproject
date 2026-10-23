@@ -434,3 +434,16 @@ Understand the output:
 - Where: Results appear in the terminal; source data comes from system_health_alerts.csv.
 - Why: You can compare alert frequency across monitoring sessions.
 Important: This measures alert records per hour over the interval between the first and last recorded alert. It does not measure actual CPU or memory usage continuously, and a very short interval can produce a high rate.
+
+42) System Health Alert Severity Classifier:-
+What: Build a Rust program that classifies recorded alerts as HIGH, MEDIUM, or LOW severity based on CPU and memory usage.
+Why: Severity levels help you prioritize the alerts that need attention first.
+Understand the classification:
+Condition	Severity
+CPU or RAM ≥ 95%	HIGH
+Otherwise, CPU or RAM ≥ 85%	MEDIUM
+Otherwise	LOW
+What: Each CSV row receives a severity label.
+Where: The classifier reads system_health_alerts.csv and prints the results in the terminal.
+Why: You can quickly identify records with the highest resource usage.
+Important: These thresholds are example rules, not universal standards. This program classifies recorded alert rows only; it does not detect new alerts or change your dashboard.
