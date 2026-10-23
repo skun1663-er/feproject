@@ -402,3 +402,8 @@ What: Generate some alert records first.
 Where: Run your existing system health alert dashboard: cargo run --bin system_health_alert_dashboard
 Why: The dashboard records rows only when CPU or memory usage crosses its configured threshold. Let it run until an alert occurs, then press Ctrl+C and inspect the CSV.
 Remember: Unix timestamps represent seconds since January 1, 1970—not row numbers or ordinary small integers.
+
+38) System Health Alert Search Tool:-
+What: Build a Rust program that searches your alert history for HIGH_CPU, HIGH_MEMORY, or both.
+Why: You can quickly find specific alert records without manually reading the entire CSV file.
+If the CSV contains no matching records, the result will correctly show zero.
