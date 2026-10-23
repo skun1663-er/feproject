@@ -407,3 +407,30 @@ Remember: Unix timestamps represent seconds since January 1, 1970—not row numb
 What: Build a Rust program that searches your alert history for HIGH_CPU, HIGH_MEMORY, or both.
 Why: You can quickly find specific alert records without manually reading the entire CSV file.
 If the CSV contains no matching records, the result will correctly show zero.
+
+39) System Health Alert Statistics by Hour:-
+What: Build a Rust program that groups recorded alerts by hour of the day and displays which hours have the most alerts.
+Why: Hourly statistics help identify when your system experiences the most resource alerts.
+Understand the output:
+- What: Each # represents one alert record.
+- Where: The data comes from system_health_alerts.csv.
+- Why: The hourly breakdown helps you spot patterns in recorded alerts.
+Important: Unix timestamps are grouped by UTC hour, not Indian Standard Time (IST). Also, because the dashboard logs only threshold breaches, this program analyzes alert records—not every hour of system activity.
+
+40) System Health Alert Trend Report:-
+What: Build a Rust program that analyzes alert records in timestamp order and reports whether alerts are increasing or decreasing over time.
+Why: Tracking alert trends helps you see whether system resource problems are becoming more frequent.
+Understand the result:
+- What: The report compares alert counts in the first and second halves of your recorded history.
+- Where: It reads system_health_alerts.csv and prints the result in the terminal.
+- Why: You can quickly see whether CPU or memory alerts have become more frequent.
+Important: This is a comparison of record counts, not alert rates. If the two periods cover different amounts of time, the result can be misleading. A fairer trend analysis would compare alerts per hour or day.
+
+41) System Health Alert Rate Analyzer:-
+What: Build a Rust program that calculates CPU and memory alerts per hour across your recorded history.
+Why: Alert rates provide a fairer comparison between periods of different lengths than raw alert counts.
+Understand the output:
+- What: The report displays alert counts and average alerts per hour.
+- Where: Results appear in the terminal; source data comes from system_health_alerts.csv.
+- Why: You can compare alert frequency across monitoring sessions.
+Important: This measures alert records per hour over the interval between the first and last recorded alert. It does not measure actual CPU or memory usage continuously, and a very short interval can produce a high rate.
