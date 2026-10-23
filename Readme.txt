@@ -370,4 +370,10 @@ What: Open the generated statistics report.
 Why: The report gives you the total alert records, CPU and memory alert counts, and maximum recorded usage.
 Note: The report analyzes only alerts already recorded in system_health_alerts.csv; if the file contains only its header, the counts will be zero.
 
+35) System Health Alert History Visualizer:-
+What: Create a Rust program that displays CPU and RAM alert counts as text-based bar charts.
+What: Each # represents one alert; a record containing both alert types contributes to both counts.
+Where: The data comes from system_health_alerts.csv.
+Why: You can quickly identify which resource triggers alerts more often.
+
 
