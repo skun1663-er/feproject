@@ -376,4 +376,16 @@ What: Each # represents one alert; a record containing both alert types contribu
 Where: The data comes from system_health_alerts.csv.
 Why: You can quickly identify which resource triggers alerts more often.
 
+36) System Health Alert Analyzer with Filtering:-
+What: Build a Rust tool that filters recorded system alerts by a Unix timestamp range and summarizes CPU and memory alerts.
+Why: Filtering lets you investigate alerts from a particular period instead of analyzing the entire log.
+Find timestamps to test:
+What: Display the first few rows of your alert log.
+Where: PowerShell.
+Why: The CSV uses Unix timestamps in its first column, so you need values from that column to define your range.
+Find timestamps to test
+What: Display the first few rows of your alert log.
+Why: The CSV uses Unix timestamps in its first column, so you need values from that column to define your range.
+Note: The report analyzes only alerts already recorded in system_health_alerts.csv; if the file contains only its header, the counts will be zero.
 
+37)
