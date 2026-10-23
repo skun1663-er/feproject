@@ -1,7 +1,7 @@
 SYSTEM HEALTH ALERT STATISTICS
 =============================
-Total Alert Records: 289
-High CPU Alerts: 2
-High Memory Alerts: 289
-Maximum CPU Recorded: 91.77%
-Maximum Memory Recorded: 85.90%
+Total Alert Records: 1467
+High CPU Alerts: 10
+High Memory Alerts: 1467
+Maximum CPU Recorded: 99.99%
+Maximum Memory Recorded: 93.99%
