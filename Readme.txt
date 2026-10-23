@@ -447,3 +447,5 @@ What: Each CSV row receives a severity label.
 Where: The classifier reads system_health_alerts.csv and prints the results in the terminal.
 Why: You can quickly identify records with the highest resource usage.
 Important: These thresholds are example rules, not universal standards. This program classifies recorded alert rows only; it does not detect new alerts or change your dashboard.
+
+43) System Health Alert Notification Simulator
