@@ -388,4 +388,12 @@ What: Display the first few rows of your alert log.
 Why: The CSV uses Unix timestamps in its first column, so you need values from that column to define your range.
 Note: The report analyzes only alerts already recorded in system_health_alerts.csv; if the file contains only its header, the counts will be zero.
 
-37)
+37) System Health Report Exporter:-
+What: Build a Rust tool that exports filtered system alerts into a separate CSV report.
+Why: You can share or analyze selected alert records in Excel without modifying your original alert history.
+Test it:
+What: Enter a start and end Unix timestamp from your existing alert log.
+Where: Use the timestamps in system_health_alerts.csv
+Only records within your inclusive timestamp range will be exported.
+Your new file will be:
+C:\Users\easyt\Workspace\Rust\feproject\filtered_system_health_report.csv
