@@ -448,4 +448,15 @@ Where: The classifier reads system_health_alerts.csv and prints the results in t
 Why: You can quickly identify records with the highest resource usage.
 Important: These thresholds are example rules, not universal standards. This program classifies recorded alert rows only; it does not detect new alerts or change your dashboard.
 
-43) System Health Alert Notification Simulator
+43) System Health Alert Notification Simulator:-
+Test the output
+- What: Inspect the simulated notifications and their severity levels.
+- Where: The VS Code terminal.
+- Why: This verifies that alert records can be transformed into readable notifications.
+Important: The program sends no email, SMS, or desktop notification; it only prints messages for records already in system_health_alerts.csv. If the CSV contains only its header, the notification count will be zero.
+
+44) System Health Alert Deduplication:-
+What: Build a Rust program that removes duplicate alert records from your system health log.
+Why: Repeated identical alerts can clutter reports, so deduplication helps you produce a cleaner view of recurring problems.
+Important: This program treats rows with the same CPU value, memory value, and alert type as duplicates—even if their timestamps differ. It keeps the first occurrence, so use it for a cleaned summary rather than as a replacement for your full audit history.
+
