@@ -460,3 +460,7 @@ What: Build a Rust program that removes duplicate alert records from your system
 Why: Repeated identical alerts can clutter reports, so deduplication helps you produce a cleaner view of recurring problems.
 Important: This program treats rows with the same CPU value, memory value, and alert type as duplicates—even if their timestamps differ. It keeps the first occurrence, so use it for a cleaned summary rather than as a replacement for your full audit history.
 
+45) System Health Alert Acknowledgment Tracker:-
+What: Build a Rust tool that lets you mark alert records as acknowledged or pending.
+Why: In real monitoring systems, acknowledging an alert helps teams track which incidents have been reviewed and which still need attention.
+Important: This is a learning version: it appends an acknowledgment record each time you select an alert, so it doesn't yet prevent acknowledging the same alert more than once or display existing acknowledgment status.
