@@ -361,5 +361,13 @@ What: Temporarily change let memory_limit = 80.0; to let memory_limit = 1.0;.
 Where: Near the top of system_health_alert_dashboard.rs.
 Why: A low threshold makes it easy to trigger and verify the alert logging; restore 80.0 after testing.
 
+34) System Health Alert Statistics Report:-
+What: Build a Rust tool that analyzes system_health_alerts.csv and summarizes how often CPU and RAM alerts occurred.
+Where: Create src/bin/system_health_alert_stats.rs in your existing feproject project.
+Why: This turns your alert log into useful statistics so you can identify recurring system resource problems.
+Check the result:
+What: Open the generated statistics report.
+Why: The report gives you the total alert records, CPU and memory alert counts, and maximum recorded usage.
+Note: The report analyzes only alerts already recorded in system_health_alerts.csv; if the file contains only its header, the counts will be zero.
 
 
