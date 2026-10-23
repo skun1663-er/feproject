@@ -354,6 +354,12 @@ Understand the dashboard:
 - Health Status: Shows WARNING if CPU or memory reaches 90%.
 Note: The dashboard uses terminal escape codes to clear the screen; if your terminal displays those codes literally, run it in the VS Code integrated terminal or Windows Terminal.
 
+33) System Health Alert Dashboard:-
+What: Build a live Rust dashboard that monitors CPU and RAM, highlights threshold breaches, and saves alerts to a log file.
+Test the alert:
+What: Temporarily change let memory_limit = 80.0; to let memory_limit = 1.0;.
+Where: Near the top of system_health_alert_dashboard.rs.
+Why: A low threshold makes it easy to trigger and verify the alert logging; restore 80.0 after testing.
 
 
 
